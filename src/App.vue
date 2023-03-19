@@ -1,30 +1,45 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+import Welcome from "./components/Welcome.vue"
+import Select from "./components/Select.vue"
 </script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div class="main">
+    <Welcome
+      @onClick="goTryHack"
+      :class="{none: (page!=='goTryHack')}"
+    />
+    <Select
+      :class="{none: (page!=='select')}"
+    />
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
-
+<script lang="ts">
+export default {
+  data(){
+    return {
+      page:"goTryHack"
+    }
+  },
+  methods: {
+    goTryHack(){
+      this.page="select"
+    }
+  }
+}
+</script>
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.main{
+  background-color: #fff;
+  padding: 10px;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.none{
+  display: none;
 }
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+</style>
+<style>
+body{
+  background-image: url("./assets/bg/1.jpg");
+  background-size: cover;
 }
 </style>
