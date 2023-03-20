@@ -1,31 +1,17 @@
 <script setup lang="ts">
-import Welcome from "./components/Welcome.vue"
-import Select from "./components/Select.vue"
+
 </script>
 
 <template>
   <div class="main">
-    <Welcome
-      @onClick="goTryHack"
-      :class="{none: (page!=='goTryHack')}"
-    />
-    <Select
-      :class="{none: (page!=='select')}"
-    />
+    <h1>LemoNet</h1>
+    <router-view />
   </div>
 </template>
 <script lang="ts">
 export default {
-  data(){
-    return {
-      page:"goTryHack"
-    }
-  },
-  methods: {
-    goTryHack(){
-      this.page="select"
-    }
-  }
+  data(){},
+  methods: {}
 }
 </script>
 <style scoped>
