@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>HowHack</h1>
+        <h1>LemoNet</h1>
         <p>Liberlunaの、TryHack Site。</p>
         <button class="go-try-hack" @click="goTryHack">Try hack!</button>
     </div>
