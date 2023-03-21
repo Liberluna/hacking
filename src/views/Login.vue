@@ -4,7 +4,7 @@
     <div>
       <button
         class="login-from-github"
-        @click="loginFromGithub"
+        @click=""
       >
         <img 
           src="../assets/icons/github.svg"
@@ -43,12 +43,12 @@
   margin-right: 2px;
 }
 </style>
-<script>
+<script lang="ts">
 export default {
   name: "welcome",
   methods: {
-    loginFromGithub() {
-      
+    loginFromGuest() {
+      this.$router.push("select")
     }
   }
 }

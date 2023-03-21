@@ -12,7 +12,7 @@
   background-color: #d3d0ff;
 }
 </style>
-<script>
+<script lang="ts">
 export default {
   name: "welcome",
   methods: {
