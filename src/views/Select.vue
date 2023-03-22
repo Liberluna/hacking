@@ -2,9 +2,13 @@
   <div>
     <h2>Select Stage</h2>
     <div class="stage-map">
-      <ul v-for="question in questions.questions">
+      <ul v-for="question in questions" :key="question.id">
         <li>
-          {{ question }}
+          <a
+            :href="question.url"
+          >
+            {{ question.title }}
+          </a>
         </li>
       </ul>
     </div>
@@ -18,13 +22,13 @@
 }
 </style>
 <script lang="ts">
-import questions from "../question/questions.json";
-console.log(questions)
+import { questions } from "../question"
+
 export default {
   name: "select",
   data() {
     return {
-      
+      questions,
     }
   },
   methods: {
